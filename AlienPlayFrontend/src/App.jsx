@@ -1,4 +1,5 @@
 import "./App.css";
+import Particles from "./components/Particles";
 
 function App() {
   const handleClick = async () => {
@@ -21,10 +22,16 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <button onClick={handleClick}>Click Me</button>
-      </header>
+    <div>
+      <div>
+        <Particles></Particles>
+      </div>
+      <div className="App">
+        <header className="App-header">
+          <button onClick={handleClick}>Spare humanity</button>
+          <button onClick={handleClick}>Destroy humanity</button>
+        </header>
+      </div>
     </div>
   );
 }

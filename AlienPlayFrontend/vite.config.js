@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": "http://localhost:8080", // Proxy API requests to Go server
+      "/api": "http://backend:8080", // Proxy API requests to Go server
     },
   },
 });

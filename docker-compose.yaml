@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  # Go Backend Service
+  backend:
+    build:
+      context: ./AlienPlayBackend
+      dockerfile: Dockerfile
+    volumes:
+      - ./AlienPlayBackend:/app
+    ports:
+      - "8080:8080"
+
+  # React Frontend Service
+  frontend:
+    build:
+      context: ./AlienPlayFrontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./AlienPlayFrontend:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
