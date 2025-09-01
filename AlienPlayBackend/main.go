@@ -13,7 +13,7 @@ func main() {
 			return
 		}
 		
-		fmt.Println("hiii") 
+		fmt.Println(r) 
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("Message received"))
 	})

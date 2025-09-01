@@ -2,13 +2,14 @@ import "./App.css";
 import Particles from "./components/Particles";
 
 function App() {
-  const handleClick = async () => {
+  const handleClick = async (action) => {
     try {
-      const response = await fetch("/api/hi", {
+      const response = await fetch("/api/sendVote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({ action: action }),
       });
 
       if (!response.ok) {
@@ -23,14 +24,12 @@ function App() {
 
   return (
     <div>
-      <div>
-        <Particles></Particles>
-      </div>
       <div className="App">
-        <header className="App-header">
-          <button onClick={handleClick}>Spare humanity</button>
-          <button onClick={handleClick}>Destroy humanity</button>
-        </header>
+        <div className="ParticlesWrapper">
+          <Particles />
+        </div>
+        <button onClick={() => handleClick("spare")}>Spare humanity</button>
+        <button onClick={() => handleClick("destroy")}>Destroy humanity</button>
       </div>
     </div>
   );

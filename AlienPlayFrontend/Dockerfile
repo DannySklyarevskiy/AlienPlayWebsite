@@ -1,5 +1,5 @@
 # Development stage with hot reload
-FROM node:latest AS development
+FROM node:24-alpine AS development
 
 # Set working directory
 WORKDIR /app
