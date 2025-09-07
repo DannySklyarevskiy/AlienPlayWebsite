@@ -1,5 +1,5 @@
 # Development image with hot reload
-FROM golang:1.24-alpine AS development
+FROM golang:1.25-alpine AS development
 
 # Install air for hot reload
 RUN go install github.com/air-verse/air@latest

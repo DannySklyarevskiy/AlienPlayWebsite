@@ -28,8 +28,10 @@ function App() {
         <div className="ParticlesWrapper">
           <Particles />
         </div>
-        <button onClick={() => handleClick("spare")}>Spare humanity</button>
-        <button onClick={() => handleClick("destroy")}>Destroy humanity</button>
+        <div className="buttons-container">
+          <button id="spare" onClick="handleClick('spare')">Spare <br/> Humanity</button>
+          <button id="destroy" onClick="handleClick('destroy')">Destroy <br/> Humanity</button>
+        </div>
       </div>
     </div>
   );

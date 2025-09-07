@@ -7,13 +7,13 @@ import (
 
 func main() {
 	// Define the API endpoint
-	http.HandleFunc("/api/hi", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/api/sendVote", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodPost {
 			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 			return
 		}
-		
-		fmt.Println(r) 
+
+		fmt.Println(r)
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("Message received"))
 	})
