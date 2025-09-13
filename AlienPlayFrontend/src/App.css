@@ -44,21 +44,21 @@ button:active {
 }
 
 #spare {
-  background: linear-gradient(to bottom, #4CAF50, #2E7D32);
+  background: linear-gradient(to bottom, #00BCD4, #00838F); /* Cyan to dark cyan */
   color: white;
 }
 
 #spare:hover {
-  background: linear-gradient(to bottom, #66BB6A, #388E3C);
-  box-shadow: 0 10px 20px rgba(46, 125, 50, 0.4);
+  background: linear-gradient(to bottom, #26C6DA, #0097A7);
+  box-shadow: 0 10px 20px rgba(0, 131, 143, 0.4);
 }
 
 #destroy {
-  background: linear-gradient(to bottom, #F44336, #C62828);
+  background: linear-gradient(to bottom, #FF5722, #D84315); /* Orange to dark orange */
   color: white;
 }
 
 #destroy:hover {
-  background: linear-gradient(to bottom, #EF5350, #D32F2F);
-  box-shadow: 0 10px 20px rgba(198, 40, 40, 0.4);
+  background: linear-gradient(to bottom, #FF7043, #E64A19);
+  box-shadow: 0 10px 20px rgba(216, 67, 21, 0.4);
 }

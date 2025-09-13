@@ -9,7 +9,7 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ action: action }),
+        body: JSON.stringify(action),
       });
 
       if (!response.ok) {
@@ -29,8 +29,8 @@ function App() {
           <Particles />
         </div>
         <div className="buttons-container">
-          <button id="spare" onClick="handleClick('spare')">Spare <br/> Humanity</button>
-          <button id="destroy" onClick="handleClick('destroy')">Destroy <br/> Humanity</button>
+          <button id="spare" onClick={() => handleClick("spare")}>Spare <br/> Humanity</button>
+          <button id="destroy" onClick={() => handleClick("destroy")}>Destroy <br/> Humanity</button>
         </div>
       </div>
     </div>
