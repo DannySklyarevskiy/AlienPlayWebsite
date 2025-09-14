@@ -18,7 +18,6 @@ func main() {
 
 		}
 
-		//changeTest
 		bodyBytes, err := io.ReadAll(r.Body)
 		if err != nil {
 			http.Error(w, "Error reading request body", http.StatusInternalServerError)
