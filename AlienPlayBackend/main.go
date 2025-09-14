@@ -8,8 +8,8 @@ import (
 
 func main() {
 
-    spareCount := 0
-    destroyCount := 0
+	spareCount := 0
+	destroyCount := 0
 
 	http.HandleFunc("/api/sendVote", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodPost {
@@ -18,23 +18,24 @@ func main() {
 
 		}
 
-        bodyBytes, err := io.ReadAll(r.Body)
-        if err != nil {
-            http.Error(w, "Error reading request body", http.StatusInternalServerError)
-            return
-        }
-        defer r.Body.Close()
+		//changeTest
+		bodyBytes, err := io.ReadAll(r.Body)
+		if err != nil {
+			http.Error(w, "Error reading request body", http.StatusInternalServerError)
+			return
+		}
+		defer r.Body.Close()
 
-        bodyString := string(bodyBytes)
-        fmt.Printf("Received body: %s\n", bodyString)
+		bodyString := string(bodyBytes)
+		fmt.Printf("Received body: %s\n", bodyString)
 
-        if bodyString == "\"spare\"" {
-            spareCount++
-        } else {
-            destroyCount++
-        }
+		if bodyString == "\"spare\"" {
+			spareCount++
+		} else {
+			destroyCount++
+		}
 
-        fmt.Printf("Spare count: %d, Destroy count: %d\n", spareCount, destroyCount)
+		fmt.Printf("Spare count: %d, Destroy count: %d\n", spareCount, destroyCount)
 
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("Message received"))
